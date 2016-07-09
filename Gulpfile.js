@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     os = require('os');
 
 gulp.task('sass', function() {
-    return gulp.src('scss/*.scss')
+    return gulp.src('scss/style.scss')
         .pipe(sass({
           includePaths: ['styles'].concat(neat)
         }))
@@ -31,6 +31,11 @@ gulp.task('html', function () {
     .pipe(connect.reload());
 });
 
+gulp.task('js', function () {
+  gulp.src('./js/*.js')
+    .pipe(connect.reload());
+});
+
 var browser = os.platform() === 'linux' ? 'google-chrome' : (
   os.platform() === 'darwin' ? 'google chrome' : (
   os.platform() === 'win32' ? 'chrome' : 'firefox'));
@@ -44,7 +49,8 @@ gulp.task('open', function(){
 
 gulp.task('watch', function() {
     gulp.watch('scss/*.scss', ['sass']);
-    gulp.watch('./*.html', ['html'])
+    gulp.watch('./*.html', ['html']);
+    gulp.watch('./*.js', ['js']);
 });
 
 gulp.task('default', ['sass', 'connect', 'open', 'watch']);

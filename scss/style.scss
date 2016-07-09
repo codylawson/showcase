@@ -1,5 +1,11 @@
 @import "bourbon";
 
+//vendor stuff
+@import "vendor/main.scss";
+@import "vendor/normalize.scss";
+
+//components
+
 html, body {
   padding: 0;
   margin: 0;
