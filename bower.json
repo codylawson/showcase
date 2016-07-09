@@ -1,0 +1,21 @@
+{
+  "name": "showcase",
+  "homepage": "https://github.com/codylawson/showcase",
+  "authors": [
+    "Cody Lawson <CLawson@esri.com>"
+  ],
+  "description": "Showcase my work",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-icons": "^2.2.3"
+  }
+}

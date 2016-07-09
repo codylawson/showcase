@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     os = require('os');
 
 gulp.task('sass', function() {
-    return gulp.src('scss/style.scss')
+    return gulp.src('scss/main.scss')
         .pipe(sass({
           includePaths: ['styles'].concat(neat)
         }))
