@@ -1,0 +1,3 @@
+@mixin background-stack($color, $opacity, $image-url) {
+  background: linear-gradient(to right, rgba($color, $opacity), rgba($color, $opacity)), $image-url no-repeat center center fixed;
+}

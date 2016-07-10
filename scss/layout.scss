@@ -1,0 +1,31 @@
+@import "vendor/_variables.scss";
+
+.skewed {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 91%, 0% 100%);
+}
+
+.landing-section {
+  @include background-stack($gray-dark, .9, url("../images/landing-background.jpg"));
+  background-size: auto, cover;
+  height: 110vh;
+  padding: 5em 0;
+
+  p {
+    font-size: $font-size-lg;
+    font-weight: 300;
+  }
+
+  .btn-link {
+    color: #fff;
+  }
+}
+
+.paired-button-row {
+  text-align: center;
+}
+
+.vertical-align {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

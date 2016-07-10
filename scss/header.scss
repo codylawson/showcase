@@ -1,0 +1,45 @@
+.navbar-fixed-top {
+  background: transparent;
+  transition: background 300ms linear;
+
+  &.navbar-scrolled {
+    background: $gray-dark;
+  }
+}
+
+h1 {
+  margin-bottom: 0;
+
+  a {
+    font-weight: 800;
+    color: #fff;
+
+    &:hover {
+      color: $gray-lighter;
+    }
+  }
+}
+
+.nav-item {
+
+  .nav-link {
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: $border-radius-lg;
+    padding: $spacer / 4 $spacer;
+    transition: all 300ms linear;
+
+    &:hover {
+      background: #fff;
+      color: $gray-dark;
+    }
+  }
+
+  &.active .nav-link {
+    border-color: #fff;
+  }
+
+  i {
+    font-size: $font-size-sm;
+  }
+}

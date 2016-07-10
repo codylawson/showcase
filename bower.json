@@ -16,6 +16,8 @@
     "tests"
   ],
   "dependencies": {
-    "material-design-icons": "^2.2.3"
+    "material-design-icons": "^2.2.3",
+    "tether": "^1.3.2",
+    "Chart.js": "^2.1.6"
   }
 }

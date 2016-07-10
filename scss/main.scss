@@ -5,7 +5,13 @@
 @import "vendor/normalize.scss";
 @import "../bower_components/material-design-icons/iconfont/material-icons.css";
 
+@import "vendor/_variables.scss";
+@import "vendor/bootstrap.scss";
+@import "_utilMixins.scss";
+
 //components
+@import "layout.scss";
+@import "header.scss";
 
 html, body {
   padding: 0;

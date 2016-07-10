@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     neat = require('node-neat').includePaths,
-    minifycss = require('gulp-minify-css'),
+    minifycss = require('gulp-minify-css')
+    autoprefixer = require('gulp-autoprefixer'),
     rename = require('gulp-rename'),
     watch = require('gulp-watch'),
     connect = require('gulp-connect'),
@@ -14,6 +15,10 @@ gulp.task('sass', function() {
           includePaths: ['styles'].concat(neat)
         }))
         .pipe(gulp.dest('css'))
+        .pipe(autoprefixer({
+    			browsers: ['last 2 versions'],
+    			cascade: false
+    		}))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss())
         .pipe(gulp.dest('css'))
@@ -48,9 +53,9 @@ gulp.task('open', function(){
 });
 
 gulp.task('watch', function() {
-    gulp.watch('scss/*.scss', ['sass']);
+    gulp.watch('scss/**/*.scss', ['sass']);
     gulp.watch('./*.html', ['html']);
-    gulp.watch('./*.js', ['js']);
+    gulp.watch('./js/*.js', ['js']);
 });
 
 gulp.task('default', ['sass', 'connect', 'open', 'watch']);
