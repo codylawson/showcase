@@ -21,7 +21,6 @@ h1 {
 }
 
 .nav-item {
-
   .nav-link {
     color: #fff;
     border: 2px solid transparent;
@@ -41,5 +40,101 @@ h1 {
 
   i {
     font-size: $font-size-sm;
+  }
+}
+
+.navbar-toggler {
+  position: relative;
+  transition: all 200ms linear;
+  height: 1.5em;
+  width: 1.5em;
+  background: transparent;
+  border: 2px solid #fff;
+  color: $gray-dark;
+  background: #fff;
+
+  &.collapsed {
+    background: transparent;
+    border-color: transparent;
+
+    &:hover {
+      border-color: #fff;
+    }
+
+    .icon-menu {
+      color: #fff;
+    }
+
+    .icon-close {
+      color: transparent;
+    }
+  }
+
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  .icon-menu {
+    color: transparent;
+  }
+}
+
+@media only screen and (max-width: map-get($grid-breakpoints, sm)) {
+  .navbar-nav {
+    transition: opacity 200ms linear;
+    margin-top: $spacer / 2;
+    padding-top: $spacer / 2;
+    border-top: 2px solid transparent;
+    opacity: 0;
+
+    &.collapse,
+    &.collapsing {
+      border-color: #fff;
+    }
+
+    &.collapse {
+      opacity: 1;
+    }
+  }
+}
+
+
+footer {
+  padding: $spacer * 4 0 0;
+}
+
+.footer-text-wrapper {
+  text-align: center;
+}
+
+.avatar-graphic {
+  width: 110px;
+  vertical-align: top;
+}
+
+.footer-text {
+  position: relative;
+  background: darken($gray-dark, 8%);
+  border-radius: $border-radius-lg;
+  display: inline-block;
+  padding: $spacer / 2 $spacer;
+  color: $gray-light;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    left: 0;
+    top: 7px;
+    transform: rotate(20deg);
+    border-radius: 50%;
+    border: 21px solid #0b1116;
+    border-width: 0 20px 0 0;
+    z-index: -1;
   }
 }

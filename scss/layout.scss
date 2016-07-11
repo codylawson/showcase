@@ -1,14 +1,36 @@
 @import "vendor/_variables.scss";
 
 .skewed {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 91%, 0% 100%);
+  padding: ($spacer * 7) 0;
+  margin-top: -10vh;
+
+  &:nth-child(0n + 1) {
+    margin-top: 0;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 91%, 0% 100%);
+  }
+
+  &:nth-child(0n + 2) {
+    background: $gray;
+    clip-path: polygon(0% 14%, 100% 0%, 100% 100%, 0% 90%);
+  }
+
+  &:nth-child(0n + 3) {
+    clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 93%);
+  }
+
+  &:nth-child(0n + 4) {
+    clip-path: polygon(0% 5%, 100% 0%, 100% 90%, 0% 100%);
+  }
+
+  &:nth-child(0n + 5) {
+    clip-path: polygon(0% 0%, 100% 5%, 100% 100%, 0% 90%);
+  }
 }
 
 .landing-section {
   @include background-stack($gray-dark, .9, url("../images/landing-background.jpg"));
   background-size: auto, cover;
   height: 110vh;
-  padding: 5em 0;
 
   p {
     font-size: $font-size-lg;
@@ -20,7 +42,50 @@
   }
 }
 
-.paired-button-row {
+.skills-chart {
+  width: 100% !important;
+  max-width: 800px;
+  height: auto !important;
+}
+
+.sample-project {
+  height: 100vh;
+}
+
+.sample-guy-carp {
+  @include sample-background-stack($brand-primary, url("../images/sample-desktop.png"), left);
+}
+
+.sample-walmart {
+  @include sample-background-stack($gray-lighter, url("../images/sample-desktop-dark.png"), left);
+  color: $gray;
+}
+
+.more-samples-section {
+  background: $brand-danger;
+  text-align: center;
+}
+
+.large-label {
+  color: desaturate(darken($brand-danger, 25%), 25%);
+  line-height: 3em;
+
+  i {
+    vertical-align: middle;
+  }
+}
+
+.sample-app-icon {
+  font-size: 3em;
+}
+
+section h3 {
+  font-weight: 200;
+  opacity: .7;
+  margin-bottom: $spacer * 2;
+}
+
+.section-c2a-buttons {
   text-align: center;
 }
 

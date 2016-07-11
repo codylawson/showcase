@@ -1,3 +1,20 @@
 @mixin background-stack($color, $opacity, $image-url) {
   background: linear-gradient(to right, rgba($color, $opacity), rgba($color, $opacity)), $image-url no-repeat center center fixed;
 }
+
+@mixin sample-background-stack($color, $image-url, $image-side) {
+  background: linear-gradient(to bottom, rgba($color, .8), rgba($color, 0) 40%), $image-url no-repeat $image-side center fixed, $color;
+  background-size: auto,50vw;
+  @if $image-side == 'right' {
+    background-position-x: 105%;
+  } @else {
+    background-position-x: -5%;
+  }
+
+  @media only screen and (max-width: map-get($grid-breakpoints, sm)) {
+    background: linear-gradient(to bottom, rgba($color, .8), rgba($color, .8)), $image-url no-repeat center center fixed, $color;
+    background-size: auto,80vw;
+    background-position-x: auto;
+  }
+
+}

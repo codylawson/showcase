@@ -28,7 +28,7 @@
 
 $gray-dark:                 #182631 !default;
 $gray:                      #233B4D !default;
-$gray-light:                #818a91 !default;
+$gray-light:                #7a8696 !default;
 $gray-lighter:              #eceeef !default;
 $gray-lightest:             #F9F9F9 !default;
 
@@ -266,6 +266,10 @@ $btn-warning-border:             $btn-warning-bg !default;
 $btn-danger-color:               #fff !default;
 $btn-danger-bg:                  $brand-danger !default;
 $btn-danger-border:              $btn-danger-bg !default;
+
+$btn-inverted-color:               $brand-primary !default;
+$btn-inverted-bg:                  #fff !default;
+$btn-inverted-border:              #fff !default;
 
 $btn-link-disabled-color:        $gray-light !default;
 

@@ -1,12 +1,41 @@
 $(function() {
-    $("#header").load("header.html");
+    //dynamically load the header and footer so we don't have to include them in every page
+    $("#header").load("header.html", null, function() {
+        setHeaderStyle($(window)[0]);
+    });
     $("#footer").load("footer.html");
 
-    $(window).scroll(function(e) {
-        if (e.delegateTarget.scrollY > 10) {
+    var inView = false;
+
+    function isScrolledIntoView(elem) {
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+
+        var elemTop = $(elem).offset().top;
+        var elemBottom = elemTop + $(elem).height();
+
+        var offset = 100;
+
+        return (((elemTop + offset) <= docViewBottom) && ((elemBottom + offset) >= docViewTop));
+    }
+
+    //Set class on header when we're scrolled down
+    var setHeaderStyle = function(e) {
+        if (e.scrollY > 10) {
             $('.navbar-fixed-top').addClass('navbar-scrolled');
         } else {
             $('.navbar-fixed-top').removeClass('navbar-scrolled');
+        }
+    }
+    $(window).scroll(function(e) {
+        setHeaderStyle(e.delegateTarget);
+
+        if (isScrolledIntoView('#skillsChart')) {
+            if (inView) { return; }
+                inView = true;
+                var myChart = new Chart(ctx, chartOptions);
+            } else {
+                inView = false;
         }
     })
 
@@ -17,7 +46,7 @@ $(function() {
 
     //Do the chart stuff
     var ctx = document.getElementById("skillsChart");
-    var myChart = new Chart(ctx, {
+    var chartOptions = {
         type: 'polarArea',
         data: {
             labels: ["HTML", "CSS", "Javascript", "Design", "Data Vis"],
@@ -57,5 +86,5 @@ $(function() {
                 reverse: false
             }
         }
-    });
+    };
 });
