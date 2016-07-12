@@ -1,0 +1,26 @@
+.sample-project {
+  height: 100vh;
+}
+
+.sample-guy-carp {
+  @include sample-background-stack($brand-primary, url("../images/sample-desktop.png"), left);
+}
+
+.sample-walmart {
+  @include sample-background-stack($gray-lighter, url("../images/sample-desktop-dark.png"), left);
+  color: $gray;
+}
+
+.sample-pge {
+  @include sample-background-stack($brand-info, url("../images/sample-desktop.png"), right);
+  text-align: right;
+}
+
+.sample-eagle-i {
+  @include sample-background-stack($gray, url("../images/sample-desktop.png"), right);
+  text-align: right;
+}
+
+.sample-syncrude {
+  @include sample-background-stack($brand-danger, url("../images/sample-desktop.png"), left);
+}
