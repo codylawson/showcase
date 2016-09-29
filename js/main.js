@@ -1,5 +1,8 @@
 $(function() {
-    var updateNav = function(elem) {
+    var ctx,
+        myChart;
+
+    var updateNav = function(elem, collapse) {
         if (!elem) {
             //get link by url
             pathname = $(location)[0].pathname;
@@ -11,6 +14,10 @@ $(function() {
         } else if ($(elem).hasClass('nav-link')){
             $('.nav-item.active').removeClass('active');
             $(elem).parent().addClass('active');
+        }
+
+        if (collapse) {
+            $('.navbar-toggler[aria-expanded="true"]').click();
         }
     }
 
@@ -33,9 +40,6 @@ $(function() {
         var randomOption = Math.floor(Math.random() * chatOptions.length);
         $('.footer-text').html(chatOptions[randomOption]);
     });
-
-    var inView = false;
-    var hasAnimated = false;
 
     function isScrolledIntoView(elem) {
         if ($(elem)[0]) {
@@ -62,15 +66,17 @@ $(function() {
     $(window).scroll(function(e) {
         setHeaderStyle(e.delegateTarget);
 
-        if (isScrolledIntoView('#skillsChart') && !hasAnimated) {
-            if (inView) {
-                return;
-            }
-            inView = true;
-            var myChart = new Chart(ctx, chartOptions);
-            hasAnimated = true;
+        var domHasChart;
+        if (myChart) {
+            //also have to check that it's in our current dom
+            domHasChart = $(document).has(myChart.chart.canvas).length > 0;
         } else {
-            inView = false;
+            domHasChart = false;
+        }
+
+        if (isScrolledIntoView('#skillsChart') && !domHasChart) {
+            ctx = document.getElementById("skillsChart");
+            myChart = new Chart(ctx, chartOptions);
         }
     })
 
@@ -80,9 +86,9 @@ $(function() {
     Chart.defaults.global.defaultFontSize = 14;
 
     //Do the chart stuff
-    var ctx = document.getElementById("skillsChart");
+    ctx = document.getElementById("skillsChart");
     var chartOptions = {
-        type: 'polarArea',
+        type: 'horizontalBar',
         data: {
             labels: ["HTML", "CSS", "Javascript", "Design", "Data Vis"],
             datasets: [{
@@ -102,7 +108,7 @@ $(function() {
                 bodyFontSize: 14,
                 callbacks: {
                     title: function(item, data) {
-                        return data.labels[item[0].index];
+                        return item[0].xLabel + ' / 10' ;
                     },
                     label: function(item, data) {
                         return ''
@@ -110,26 +116,40 @@ $(function() {
                 }
             },
             legend: {
-                position: 'top',
+                display: false
             },
             responsive: true,
-            scale: {
-                display: false,
-                ticks: {
-                    beginAtZero: true
-                },
-                reverse: false
+            scales: {
+                xAxes: [
+                    {
+                        display: false,
+                        ticks: {
+                            beginAtZero: true,
+                            max: 10
+                        }
+                    }
+                ],
+                yAxes: [
+                    {
+                        gridLines: {
+                            display: false
+                        },
+                        ticks: {
+                            fontColor: '#7a8696'
+                        }
+                    }
+                ]
             }
         }
     };
 
     Barba.Pjax.start();
 
-    Barba.Dispatcher.on('transitionCompleted', function() {
-        updateNav();
-    });
     Barba.Dispatcher.on('linkClicked', function(elem) {
-        updateNav(elem);
+        updateNav(elem, true);
+    });
+    Barba.Dispatcher.on('transitionCompleted', function() {
+        updateNav(null);
     });
 
     //animation from http://barbajs.org/transition.html
@@ -149,6 +169,9 @@ $(function() {
         var $el = $(this.newContainer);
 
         $(this.oldContainer).hide();
+
+        //scroll new container to top of page
+        $(window).scrollTop(0);
 
         $el.css({
           visibility : 'visible',
