@@ -1,0 +1,127 @@
+.project-page {
+  .skewed {
+    padding: 9em 0;
+  }
+}
+
+.project-intro {
+  background: $brand-primary;
+  min-height: 70vh;
+
+  h2 {
+    font-size: 4rem;
+    margin: .5rem 0;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .project-gc & {
+    background: $brand-gc;
+
+    .btn-inverted {
+      color: $brand-gc;
+    }
+  }
+}
+
+.project-role {
+  background: $gray;
+  text-align: center;
+
+  h3 {
+    text-align: left;
+  }
+
+  h4 {
+    margin-bottom: 1.5em;
+  }
+
+  i {
+    background: white;
+    color: $gray;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    font-size: 3em;
+    line-height: 2em;
+    margin-bottom: .3em;
+  }
+
+  p {
+    text-align: left;
+  }
+}
+
+.project-process {
+  background: $gray-lightest;
+  color: $gray;
+  text-align: right;
+
+  section:nth-child(odd) {
+    text-align: right;
+  }
+
+  section:nth-child(even) {
+    text-align: left;
+  }
+
+  .process-images {
+    margin: 1em 0 3em;
+    padding: 1em 0;
+    background: $gray-lighter;
+    border: 1px solid darken($gray-lighter, 5%);
+    border-left: none;
+    border-right: none;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.project-technology {
+  background: $brand-danger;
+  text-align: center;
+
+  h3 {
+    text-align: left;
+  }
+
+  h4 {
+    margin-bottom: 1.5em;
+  }
+
+  i {
+    background: white;
+    color: $brand-primary;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    font-size: 3em;
+    line-height: 2em;
+    margin-bottom: .3em;
+  }
+
+  p {
+    text-align: left;
+  }
+}
+
+.project-lessons {
+  background: $gray;
+  text-align: right;
+
+  ol {
+    direction: rtl;
+  }
+
+  li {
+    margin-bottom: 2em;
+    padding-right: .5em;
+  }
+}
