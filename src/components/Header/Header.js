@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 import {
   StyledHeader,
@@ -9,6 +10,8 @@ import {
 } from './Header-styled';
 
 import Popover, { Menu, MenuItem } from '../common/Popover/';
+import OpenInNewIcon from 'mdi-react/OpenInNewIcon';
+import ChevronDownIcon from 'mdi-react/ChevronDownIcon';
 
 const NavLinkSpan = StyledHeaderLink.withComponent('span');
 
@@ -32,18 +35,27 @@ class Header extends Component {
     });
   };
 
+  _getActiveLocation = route => {
+    const location = this.props.location;
+
+    return location.pathname.indexOf(route) > -1;
+  };
+
   render() {
     return (
       <StyledHeader>
         <StyledHeaderBrand>Cody Lawson</StyledHeaderBrand>
         <StyledHeaderNav>
-          <NavLink to="/">
+          <NavLink exact to="/">
             <NavLinkSpan>Home</NavLinkSpan>
           </NavLink>
           <Popover
             targetEl={
-              <StyledHeaderLink onClick={this.togglePopover}>
-                Projects
+              <StyledHeaderLink
+                active={this._getActiveLocation('projects')}
+                onClick={this.togglePopover}
+              >
+                Projects <ChevronDownIcon size={16} />
               </StyledHeaderLink>
             }
             open={this.state.open}
@@ -61,11 +73,13 @@ class Header extends Component {
               </NavLink>
             </Menu>
           </Popover>
-          <StyledHeaderLink>Resume</StyledHeaderLink>
+          <StyledHeaderLink target="_blank" href="./Cody_Lawson_Resume.pdf">
+            Resume <OpenInNewIcon size={18} />
+          </StyledHeaderLink>
         </StyledHeaderNav>
       </StyledHeader>
     );
   }
 }
 
-export default Header;
+export default withRouter(Header);

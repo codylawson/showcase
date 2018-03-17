@@ -39,10 +39,12 @@ const StyledPopoverMenu = styled.div`
 `;
 
 const StyledPopoverMenuItem = styled.div`
-  padding: ${props => props.theme.spacing}
+  padding: ${props => unitCalc(props.theme.spacing, 1.5, '/')}
     ${props => unitCalc(props.theme.spacing, 1.5, '*')};
   border-left: 4px solid;
   border-left-color: transparent;
+  border-right: 4px solid transparent;
+  color: ${props => props.theme.palette.primary3};
 
   &:hover {
     background: ${props => props.theme.palette.lighterGray};
