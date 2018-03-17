@@ -39,13 +39,19 @@ const ShowcaseTheme = {
     alert: colors.yellow,
     warning: colors.orange,
     error: colors.red,
-    info: colors.purple
+    info: colors.purple,
+
+    transparentWhite: 'rgba(255, 255, 255, 0.9)',
+    transparentBlack: 'rgba(25, 35, 50, 0.9)'
   },
 
   gradients: {
-    primary: 'linear-gradient( 135deg, #5EFCE8 10%, #736EFE 100%)',
+    primary: 'linear-gradient( 135deg, #3C8CE7 10%, #00EAFF 100%);',
+    primary2: 'linear-gradient( 135deg, #5ca4f6 10%, #58f1ff 100%);',
     secondary:
-      'linear-gradient(45deg, rgb(254, 107, 139) 30%, rgb(255, 142, 83) 90%)'
+      'linear-gradient(45deg, rgb(254, 107, 139) 30%, rgb(255, 142, 83) 90%)',
+    secondary2:
+      'linear-gradient(45deg, rgb(250, 134, 159) 30%, rgb(255, 155, 103) 90%)'
   },
 
   // ┌──────────────┐
@@ -77,10 +83,10 @@ const ShowcaseTheme = {
 
   boxShadow: {
     z1: 'rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px',
-    z2: 'rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px',
-    z3: 'rgba(0, 0, 0, 0.19) 0px 10px 30px, rgba(0, 0, 0, 0.23) 0px 6px 10px',
-    z4: 'rgba(0, 0, 0, 0.25) 0px 14px 45px, rgba(0, 0, 0, 0.22) 0px 10px 18px',
-    z5: 'rgba(0, 0, 0, 0.3) 0px 19px 60px, rgba(0, 0, 0, 0.22) 0px 15px 20px'
+    z2: 'rgba(0, 0, 0, 0.14) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px',
+    z3: 'rgba(0, 0, 0, 0.16) 0px 10px 30px, rgba(0, 0, 0, 0.23) 0px 6px 10px',
+    z4: 'rgba(0, 0, 0, 0.19) 0px 14px 45px, rgba(0, 0, 0, 0.22) 0px 10px 18px',
+    z5: 'rgba(0, 0, 0, 0.25) 0px 19px 60px, rgba(0, 0, 0, 0.22) 0px 15px 20px'
   }
 };
 

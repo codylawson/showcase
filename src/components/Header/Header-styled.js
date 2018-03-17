@@ -8,14 +8,26 @@ const StyledHeader = styled.header`
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: ${props => unitCalc(props.theme.spacing, 2, '/')}
+  padding: ${props => props.theme.spacing}
     ${props => unitCalc(props.theme.spacing, 2, '*')};
   box-sizing: border-box;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: all 225ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+
+  ${props =>
+    props.scrolled &&
+    css`
+      background: ${props.theme.palette.transparentWhite};
+      border-bottom-color: ${props.theme.palette.lightGray};
+    `};
 `;
 
 const StyledHeaderBrand = styled.h1`
   line-height: 0;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
+  color: ${props => props.theme.palette.black};
 `;
 
 const StyledHeaderNav = styled.nav`
@@ -28,17 +40,17 @@ const StyledHeaderNav = styled.nav`
 
 const _getHeaderLinkActive = props => {
   return `
-    background: ${props.theme.palette.white};
-    color: ${props.theme.palette.primary3};
+    background: ${props.theme.gradients.primary};
+    color: ${props.theme.palette.white};
 
     &:hover {
-      color: ${props.theme.palette.primary3};
+      background: ${props.theme.gradients.primary2};
     }
   `;
 };
 
 const StyledHeaderLink = styled.a`
-  color: ${props => props.theme.palette.lightGray};
+  color: ${props => props.theme.palette.darkerGray};
   padding: 0 ${props => props.theme.spacing};
   margin: 0 ${props => unitCalc(props.theme.spacing, 3, '/')};
   display: flex;
@@ -53,7 +65,7 @@ const StyledHeaderLink = styled.a`
   }
 
   &:hover {
-    color: ${props => props.theme.palette.white};
+    color: ${props => props.theme.palette.black};
   }
 
   .active & {

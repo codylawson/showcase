@@ -33,7 +33,7 @@ const StyledPopperTransition = {
 const StyledPopoverMenu = styled.div`
   background-color: ${props => props.theme.palette.white};
   border-radius: ${props => props.theme.borderRadius.large};
-  box-shadow: ${props => props.theme.boxShadow.z5};
+  box-shadow: ${props => props.theme.boxShadow.z4};
   overflow: hidden;
   padding: ${props => unitCalc(props.theme.spacing, 2, '/')} 0;
 `;

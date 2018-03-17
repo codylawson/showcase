@@ -19,9 +19,24 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false
+      open: false,
+      isScrolled: false
     };
   }
+
+  handleScroll = event => {
+    this.setState({
+      isScrolled: window.scrollY > 40
+    });
+  };
+
+  componentDidMount = () => {
+    window.addEventListener('scroll', this.handleScroll);
+  };
+
+  componentWillUnmount = () => {
+    window.removeEventListener('scroll', this.handleScroll);
+  };
 
   togglePopover = () => {
     this.setState({
@@ -43,7 +58,7 @@ class Header extends Component {
 
   render() {
     return (
-      <StyledHeader>
+      <StyledHeader scrolled={this.state.isScrolled}>
         <StyledHeaderBrand>Cody Lawson</StyledHeaderBrand>
         <StyledHeaderNav>
           <NavLink exact to="/">
