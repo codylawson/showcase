@@ -8,7 +8,7 @@ const StyledHeader = styled.header`
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: ${props => props.theme.spacing}
+  padding: ${props => unitCalc(props.theme.spacing, 1.25, '*')}
     ${props => unitCalc(props.theme.spacing, 2, '*')};
   box-sizing: border-box;
   background: transparent;
@@ -19,6 +19,8 @@ const StyledHeader = styled.header`
   ${props =>
     props.scrolled &&
     css`
+      padding: ${props => unitCalc(props.theme.spacing, 0.8, '*')}
+        ${props => unitCalc(props.theme.spacing, 2, '*')};
       background: ${props.theme.palette.transparentWhite};
       border-bottom-color: ${props.theme.palette.lightGray};
     `};
@@ -26,8 +28,15 @@ const StyledHeader = styled.header`
 
 const StyledHeaderBrand = styled.h1`
   line-height: 0;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: ${props => props.theme.palette.black};
+  transition: font-size 225ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  ${props =>
+    props.scrolled &&
+    css`
+      font-size: 1.5rem;
+    `};
 `;
 
 const StyledHeaderNav = styled.nav`

@@ -55,7 +55,9 @@ class Header extends Component {
 
     return (
       <StyledHeader scrolled={this.state.isScrolled}>
-        <StyledHeaderBrand>Cody Lawson</StyledHeaderBrand>
+        <StyledHeaderBrand scrolled={this.state.isScrolled}>
+          Cody Lawson
+        </StyledHeaderBrand>
         {headerNav}
       </StyledHeader>
     );
