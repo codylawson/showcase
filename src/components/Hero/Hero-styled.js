@@ -16,11 +16,16 @@ const StyledHeroContent = styled.div`
   text-align: center;
 `;
 
-const StyledHeroTitle = styled.h2``;
+const StyledHeroTitle = styled.h2`
+  font-weight: 800;
+`;
+
 const StyledHeroSubtitle = styled.h3``;
+
 const StyledHeroBody = styled.div`
   margin: 0 auto;
 `;
+
 const StyledHeroActions = styled.div``;
 
 export {
