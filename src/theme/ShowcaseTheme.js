@@ -21,6 +21,7 @@ const ShowcaseTheme = {
     // │ Grayscale │
     // └───────────┘
     white: '#ffffff',
+    lightestGray: '#FAFBFC',
     lighterGray: '#ECEFF5',
     lightGray: '#D8DDE6',
     gray: '#C1C7D4',
@@ -41,8 +42,8 @@ const ShowcaseTheme = {
     error: colors.red,
     info: colors.purple,
 
-    transparentWhite: 'rgba(255, 255, 255, 0.9)',
-    transparentBlack: 'rgba(25, 35, 50, 0.9)'
+    transparentWhite: 'rgba(255, 255, 255, 0.95)',
+    transparentBlack: 'rgba(25, 35, 50, 0.95)'
   },
 
   gradients: {
@@ -96,7 +97,7 @@ injectGlobal`
     margin: 0;
     padding: 0;
     font-family: 'Lato', sans-serif;
-    background: ${colors.darkerBlue};
+    background: ${ShowcaseTheme.palette.lightestGray};
   }
 
   .recharts-polar-angle-axis-tick {

@@ -3,11 +3,16 @@ import { unitCalc } from '../../theme/utils';
 
 const StyledFooter = styled.div`
   width: 100%;
-  padding: ${props => unitCalc(props.theme.spacing, 2, '*')} 0;
+  margin-top: -8rem;
+  padding: ${props => unitCalc(props.theme.spacing, 4, '*')}
+    ${props => unitCalc(props.theme.spacing, 0, '*')}
+    ${props => unitCalc(props.theme.spacing, 3, '*')};
   box-sizing: border-box;
   text-align: center;
   font-weight: 300;
+  background-color: ${props => props.theme.palette.primary3};
   color: ${props => props.theme.palette.gray};
+  clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 100%);
 `;
 
 const StyledFooterTitle = styled.h4`

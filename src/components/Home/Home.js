@@ -15,7 +15,7 @@ const Home = props => {
       <Hero
         title="Hello!"
         style={{
-          background: ShowcaseTheme.palette.white,
+          background: ShowcaseTheme.palette.lightestGray,
           color: ShowcaseTheme.palette.black
         }}
       >
@@ -40,7 +40,7 @@ const Home = props => {
       <ProjectSection
         title="0.1 Experience And Skills"
         backgroundColor={ShowcaseTheme.palette.primary3}
-        clipOffset={[15, 0, 100, 90]}
+        clipOffset={[15, 0, 85, 100]}
         feature={<SkillChart />}
       >
         <p>

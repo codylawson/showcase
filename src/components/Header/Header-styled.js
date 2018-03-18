@@ -16,13 +16,22 @@ const StyledHeader = styled.header`
   transition: all 225ms cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
 
+  @media (max-width: ${props => props.theme.small}) {
+    padding: ${props => props.theme.spacing};
+  }
+
   ${props =>
     props.scrolled &&
     css`
       padding: ${props => unitCalc(props.theme.spacing, 0.8, '*')}
         ${props => unitCalc(props.theme.spacing, 2, '*')};
       background: ${props.theme.palette.transparentWhite};
-      border-bottom-color: ${props.theme.palette.lightGray};
+      border-bottom-color: ${props.theme.palette.lighterGray};
+
+      @media (max-width: ${props => props.theme.small}) {
+        padding: ${props => unitCalc(props.theme.spacing, 0.6, '*')}
+          ${props => unitCalc(props.theme.spacing, 1, '*')};
+      }
     `};
 `;
 

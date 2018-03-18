@@ -15,13 +15,17 @@ const Footer = props => {
     <StyledFooter>
       <StyledFooterTitle>Some Places To Find Me</StyledFooterTitle>
       <StyledFooterActions>
-        <Button iconButton>
+        <Button iconButton href="https://dribbble.com/_Cody" target="_blank">
           <DribbbleIcon />
         </Button>
-        <Button iconButton>
+        <Button iconButton href="https://github.com/codylawson" target="_blank">
           <GithubCircleIcon />
         </Button>
-        <Button iconButton>
+        <Button
+          iconButton
+          href="https://www.instagram.com/codylawson/"
+          target="_blank"
+        >
           <InstagramIcon />
         </Button>
       </StyledFooterActions>

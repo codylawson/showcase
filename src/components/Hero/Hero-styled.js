@@ -3,9 +3,14 @@ import { unitCalc } from '../../theme/utils';
 
 const StyledHero = styled.section`
   width: 100%;
-  padding: ${props => unitCalc(props.theme.spacing, 8, '*')} 0
-    ${props => unitCalc(props.theme.spacing, 12, '*')};
+  padding: ${props => unitCalc(props.theme.spacing, 12, '*')} 0
+    ${props => unitCalc(props.theme.spacing, 22, '*')};
   clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
+
+  @media (max-width: ${props => props.theme.small}) {
+    padding: ${props => unitCalc(props.theme.spacing, 5, '*')} 0
+      ${props => unitCalc(props.theme.spacing, 15, '*')};
+  }
 `;
 
 const StyledHeroContent = styled.div`
@@ -14,6 +19,10 @@ const StyledHeroContent = styled.div`
   padding: 0 ${props => unitCalc(props.theme.spacing, 3, '*')};
   box-sizing: border-box;
   text-align: center;
+
+  @media (max-width: ${props => props.theme.small}) {
+    padding: 0 ${props => unitCalc(props.theme.spacing, 1.5, '*')};
+  }
 `;
 
 const StyledHeroTitle = styled.h2`
