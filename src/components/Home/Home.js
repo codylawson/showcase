@@ -4,6 +4,7 @@ import { StyledHome } from './Home-styled';
 
 import Hero, { HeroBody, HeroActions } from '../Hero';
 import ProjectSection from '../ProjectSection';
+import SkillChart from '../SkillChart';
 import Button from '../common/Button';
 
 import ShowcaseTheme from '../../theme/ShowcaseTheme';
@@ -37,6 +38,17 @@ const Home = props => {
       </Hero>
 
       <ProjectSection
+        title="Some Stats"
+        backgroundColor={ShowcaseTheme.palette.primary3}
+        clipOffset={[15, 0, 100, 90]}
+        feature={<SkillChart />}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo
+        ligula, aliquet vel lectus quis, accumsan maximus ex. Nulla maximus
+        augue vitae nunc ultricies sodales.
+      </ProjectSection>
+
+      <ProjectSection
         title="Project 1"
         backgroundColor={ShowcaseTheme.palette.primary}
         clipOffset={[15, 0, 100, 90]}
@@ -47,7 +59,8 @@ const Home = props => {
       </ProjectSection>
       <ProjectSection
         title="Project 2"
-        backgroundColor={ShowcaseTheme.palette.primary3}
+        backgroundColor={ShowcaseTheme.palette.white}
+        color={ShowcaseTheme.palette.black}
         clipOffset={[0, 10, 100, 95]}
         direction="rtl"
       >

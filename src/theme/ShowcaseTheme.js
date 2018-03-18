@@ -98,6 +98,15 @@ injectGlobal`
     font-family: 'Lato', sans-serif;
     background: ${colors.darkerBlue};
   }
+
+  .recharts-polar-angle-axis-tick {
+    fill: ${ShowcaseTheme.palette.gray};
+  }
+
+  .recharts-polar-grid-angle line,
+  .recharts-polar-grid-concentric-polygon {
+    stroke: ${ShowcaseTheme.palette.darkerGray} !important;
+  }
 `;
 
 export default ShowcaseTheme;

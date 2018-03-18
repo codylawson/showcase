@@ -14,6 +14,7 @@ const ProjectSection = ({
   feature,
   clipOffset,
   backgroundColor,
+  color,
   direction,
   ...other
 }) => {
@@ -21,6 +22,7 @@ const ProjectSection = ({
     <StyledProjectSection
       clipOffset={clipOffset}
       backgroundColor={backgroundColor}
+      color={color}
       direction={direction}
     >
       <StyledProjectSectionContent>
@@ -38,6 +40,7 @@ ProjectSection.propTypes = {
   feature: PropTypes.node,
   clipOffset: PropTypes.array,
   backgroundColor: PropTypes.string,
+  color: PropTypes.string,
   direction: PropTypes.oneOf(['ltr', 'rtl'])
 };
 

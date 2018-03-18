@@ -16,6 +16,7 @@ const StyledProjectSection = styled.section`
   );
   width: 100%;
   box-sizing: border-box;
+  color: ${props => props.color};
 
   ${props =>
     props.direction === 'rtl' &&
@@ -46,6 +47,7 @@ const StyledProjectSectionBody = styled.p``;
 const StyledProjectSectionFeature = styled.div`
   flex: 2 0 0px;
   padding: 0 ${props => unitCalc(props.theme.spacing, 2, '*')};
+  min-height: 400px;
 `;
 
 export {
