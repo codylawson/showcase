@@ -68,6 +68,28 @@ const StyledHeaderLink = styled.a`
     color: ${props => props.theme.palette.black};
   }
 
+  ${props =>
+    props.iconButton &&
+    css`
+      width: 2rem;
+      height: 2rem;
+      box-sizing: border-box;
+      padding: 0;
+      align-items: center;
+      justify-content: center;
+
+      .mdi-icon {
+        margin-left: 0;
+      }
+
+      ${props.active &&
+        css`
+          &:hover {
+            color: ${props.theme.palette.white};
+          }
+        `};
+    `};
+
   .active & {
     ${props => _getHeaderLinkActive(props)};
   }

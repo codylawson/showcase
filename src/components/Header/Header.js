@@ -1,26 +1,18 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
-import {
-  StyledHeader,
-  StyledHeaderBrand,
-  StyledHeaderNav,
-  StyledHeaderLink
-} from './Header-styled';
+import { StyledHeader, StyledHeaderBrand } from './Header-styled';
+import HeaderNav from './HeaderNav';
+import HeaderNavMobile from './HeaderNavMobile';
 
-import Popover, { Menu, MenuItem } from '../common/Popover/';
-import OpenInNewIcon from 'mdi-react/OpenInNewIcon';
-import ChevronDownIcon from 'mdi-react/ChevronDownIcon';
-
-const NavLinkSpan = StyledHeaderLink.withComponent('span');
+import ShowcaseTheme from '../../theme/ShowcaseTheme';
 
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false,
-      isScrolled: false
+      isScrolled: false,
+      isMobile: false
     };
   }
 
@@ -30,24 +22,21 @@ class Header extends Component {
     });
   };
 
+  handleResize = event => {
+    this.setState({
+      isMobile: window.outerWidth <= parseInt(ShowcaseTheme.small, 10)
+    });
+  };
+
   componentDidMount = () => {
     window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
   };
 
   componentWillUnmount = () => {
     window.removeEventListener('scroll', this.handleScroll);
-  };
-
-  togglePopover = () => {
-    this.setState({
-      open: !this.state.open
-    });
-  };
-
-  closePopover = () => {
-    this.setState({
-      open: false
-    });
+    window.removeEventListener('resize', this.handleResize);
   };
 
   _getActiveLocation = route => {
@@ -57,41 +46,17 @@ class Header extends Component {
   };
 
   render() {
+    let headerNav;
+    if (this.state.isMobile) {
+      headerNav = <HeaderNavMobile />;
+    } else {
+      headerNav = <HeaderNav />;
+    }
+
     return (
       <StyledHeader scrolled={this.state.isScrolled}>
         <StyledHeaderBrand>Cody Lawson</StyledHeaderBrand>
-        <StyledHeaderNav>
-          <NavLink exact to="/">
-            <NavLinkSpan>Home</NavLinkSpan>
-          </NavLink>
-          <Popover
-            targetEl={
-              <StyledHeaderLink
-                active={this._getActiveLocation('projects')}
-                onClick={this.togglePopover}
-              >
-                Projects <ChevronDownIcon size={16} />
-              </StyledHeaderLink>
-            }
-            open={this.state.open}
-            onRequestClose={this.closePopover}
-          >
-            <Menu style={{ maxWidth: '280px' }}>
-              <NavLink to="/projects/project1">
-                <MenuItem>Project 1</MenuItem>
-              </NavLink>
-              <NavLink to="/projects/project2">
-                <MenuItem>Project 2</MenuItem>
-              </NavLink>
-              <NavLink to="/projects/project3">
-                <MenuItem>Project 3</MenuItem>
-              </NavLink>
-            </Menu>
-          </Popover>
-          <StyledHeaderLink target="_blank" href="./Cody_Lawson_Resume.pdf">
-            Resume <OpenInNewIcon size={18} />
-          </StyledHeaderLink>
-        </StyledHeaderNav>
+        {headerNav}
       </StyledHeader>
     );
   }

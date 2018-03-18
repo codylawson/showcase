@@ -68,7 +68,7 @@ const ShowcaseTheme = {
   // ┌──────────────┐
   // │ Breakpoints  │
   // └──────────────┘
-  small: '480px',
+  small: '768px',
   medium: '860px',
   large: '1450px',
 

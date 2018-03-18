@@ -45,6 +45,8 @@ const StyledPopoverMenuItem = styled.div`
   border-left-color: transparent;
   border-right: 4px solid transparent;
   color: ${props => props.theme.palette.primary3};
+  display: flex;
+  align-items: center;
 
   &:hover {
     background: ${props => props.theme.palette.lighterGray};
@@ -53,6 +55,16 @@ const StyledPopoverMenuItem = styled.div`
   .active & {
     border-left-color: ${props => props.theme.palette.primary};
   }
+
+  & .mdi-icon {
+    margin-left: ${props => unitCalc(props.theme.spacing, 2, '/')};
+  }
+`;
+
+const StyledPopoverMenuDivider = styled.hr`
+  margin: ${props => unitCalc(props.theme.spacing, 2, '/')} 0;
+  border: none;
+  border-bottom: 1px solid ${props => props.theme.palette.lightGray};
 `;
 
 injectGlobal`
@@ -134,5 +146,6 @@ export {
   StyledPopover,
   StyledPopperTransition,
   StyledPopoverMenu,
-  StyledPopoverMenuItem
+  StyledPopoverMenuItem,
+  StyledPopoverMenuDivider
 };
