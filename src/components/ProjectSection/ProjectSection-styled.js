@@ -5,7 +5,7 @@ const StyledProjectSection = styled.section`
   display: flex;
   padding: ${props => unitCalc(props.theme.spacing, 10, '*')}
     ${props => unitCalc(props.theme.spacing, 2, '*')}
-    ${props => unitCalc(props.theme.spacing, 14, '*')};
+    ${props => unitCalc(props.theme.spacing, 10, '*')};
   margin-top: -6rem;
   background-color: ${props => props.backgroundColor};
   clip-path: polygon(
@@ -42,7 +42,7 @@ const StyledProjectSectionContent = styled.div`
 
 const StyledProjectSectionTitle = styled.h2``;
 
-const StyledProjectSectionBody = styled.p``;
+const StyledProjectSectionBody = styled.div``;
 
 const StyledProjectSectionFeature = styled.div`
   flex: 2 0 0px;

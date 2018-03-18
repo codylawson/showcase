@@ -38,14 +38,26 @@ const Home = props => {
       </Hero>
 
       <ProjectSection
-        title="Some Stats"
+        title="0.1 Experience And Skills"
         backgroundColor={ShowcaseTheme.palette.primary3}
         clipOffset={[15, 0, 100, 90]}
         feature={<SkillChart />}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo
-        ligula, aliquet vel lectus quis, accumsan maximus ex. Nulla maximus
-        augue vitae nunc ultricies sodales.
+        <p>
+          As a User Interface Engineer at Esri I worked on dozens of web
+          applications for companies like Walmart, Shell, and PG&amp;E, as well
+          as government agencies like the National Geospatial Agency (NGA) and
+          the Department of Energy (DOE).
+        </p>
+        <p>
+          Projects ranged from relatively minor engagements with just a few
+          people and lasting a couple months, to larger efforts with multiple
+          scrum teams developing for two or more years.
+        </p>
+        <p>
+          I have experience with modern web technologies such as jQuery,
+          Backbone and Underscore, Dojo, Tooling (Grunt &amp; Gulp), and SCSS.
+        </p>
       </ProjectSection>
 
       <ProjectSection
