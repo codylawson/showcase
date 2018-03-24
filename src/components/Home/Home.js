@@ -9,6 +9,10 @@ import ProjectSection from '../ProjectSection';
 import SkillChart from '../SkillChart';
 import Button from '../common/Button';
 
+import FireReportingBg from '../images/FireReporting_Preview.png';
+import AgriculturalUnderwritingBg from '../images/AgriculturalUnderwriting_Preview.png';
+import ComponentLibraryBg from '../images/ComponentLibrary_Preview.png';
+
 import ShowcaseTheme from '../../theme/ShowcaseTheme';
 
 const Home = props => {
@@ -67,6 +71,7 @@ const Home = props => {
       <ProjectSection
         title="02. Fire Reporting"
         backgroundColor={ShowcaseTheme.palette.primary}
+        backgroundImage={FireReportingBg}
         clipOffset={[15, 0, 100, 90]}
         direction="rtl"
         id="FireReportings_Preview"
@@ -84,6 +89,7 @@ const Home = props => {
       <ProjectSection
         title="03. Agricultural Underwriting"
         backgroundColor={ShowcaseTheme.palette.white}
+        backgroundImage={AgriculturalUnderwritingBg}
         color={ShowcaseTheme.palette.black}
         clipOffset={[0, 10, 100, 95]}
         id="AgriculturalUnderwriting_Preview"
@@ -101,6 +107,7 @@ const Home = props => {
       <ProjectSection
         title="04. Component Library"
         backgroundColor={ShowcaseTheme.palette.secondary2}
+        backgroundImage={ComponentLibraryBg}
         clipOffset={[0, 5, 100, 85]}
         direction="rtl"
         id="ComponentLibrary_Preview"

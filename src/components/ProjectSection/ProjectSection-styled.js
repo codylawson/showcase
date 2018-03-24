@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { transparentize } from 'polished';
 import { unitCalc } from '../../theme/utils';
 
 const StyledProjectSection = styled.section`
@@ -7,7 +8,26 @@ const StyledProjectSection = styled.section`
     ${props => unitCalc(props.theme.spacing, 2, '*')}
     ${props => unitCalc(props.theme.spacing, 18, '*')};
   margin-top: -14rem;
-  background-color: ${props => props.backgroundColor};
+
+  background: ${props => props.backgroundColor};
+
+  ${props =>
+    props.backgroundImage &&
+    css`
+      background: linear-gradient(
+          to right,
+          ${props => transparentize(0.15, props.backgroundColor)},
+          ${props => transparentize(0.15, props.backgroundColor)}
+        ),
+        url(${props => props.backgroundImage}) no-repeat center center,
+        linear-gradient(
+          to right,
+          ${props => props.backgroundColor},
+          ${props => props.backgroundColor}
+        );
+      background-size: auto, contain, auto;
+    `};
+
   clip-path: polygon(
     0% ${props => props.clipOffset[0]}%,
     100% ${props => props.clipOffset[1]}%,
