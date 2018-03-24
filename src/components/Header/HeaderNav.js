@@ -18,6 +18,12 @@ class Header extends Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.location.pathname !== nextProps.location.pathname) {
+      this.closePopover();
+    }
+  }
+
   togglePopover = () => {
     this.setState({
       open: !this.state.open
