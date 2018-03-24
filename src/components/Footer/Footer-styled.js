@@ -20,6 +20,7 @@ const StyledFooterTitle = styled.h4`
   padding-bottom: ${props => props.theme.spacing};
   border-bottom: 1px solid ${props => props.theme.palette.darkerGray};
   display: inline-block;
+  font-weight: 400;
 `;
 
 const StyledFooterActions = styled.div``;

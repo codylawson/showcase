@@ -16,6 +16,7 @@ const ProjectSection = ({
   backgroundColor,
   color,
   direction,
+  id,
   ...other
 }) => {
   return (
@@ -24,6 +25,7 @@ const ProjectSection = ({
       backgroundColor={backgroundColor}
       color={color}
       direction={direction}
+      id={id}
     >
       <StyledProjectSectionContent>
         <StyledProjectSectionTitle>{title}</StyledProjectSectionTitle>

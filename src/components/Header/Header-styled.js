@@ -36,16 +36,26 @@ const StyledHeader = styled.header`
 `;
 
 const StyledHeaderBrand = styled.h1`
-  line-height: 0;
-  font-size: 1.8rem;
-  color: ${props => props.theme.palette.black};
-  transition: font-size 225ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0;
+  display: flex;
 
-  ${props =>
-    props.scrolled &&
-    css`
-      font-size: 1.5rem;
-    `};
+  a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: ${props => props.theme.palette.black};
+    transition: font-size 225ms cubic-bezier(0.4, 0, 0.2, 1),
+      color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      color: ${props => props.theme.palette.darkerGray};
+    }
+
+    ${props =>
+      props.scrolled &&
+      css`
+        font-size: 1.5rem;
+      `};
+  }
 `;
 
 const StyledHeaderNav = styled.nav`
@@ -53,16 +63,18 @@ const StyledHeaderNav = styled.nav`
 
   a {
     text-decoration: none;
+    display: flex;
   }
 `;
 
 const _getHeaderLinkActive = props => {
   return `
-    background: ${props.theme.gradients.primary};
-    color: ${props.theme.palette.white};
+    background: ${props.theme.palette.lighterGray};
+    color: ${props.theme.palette.black};
+    transition: background 175ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover {
-      background: ${props.theme.gradients.primary2};
+      background: ${props.theme.palette.lightGray};
     }
   `;
 };

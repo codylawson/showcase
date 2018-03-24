@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
 import { StyledHeader, StyledHeaderBrand } from './Header-styled';
@@ -56,7 +57,9 @@ class Header extends Component {
     return (
       <StyledHeader scrolled={this.state.isScrolled}>
         <StyledHeaderBrand scrolled={this.state.isScrolled}>
-          Cody Lawson
+          <NavLink exact to="/">
+            Cody Lawson
+          </NavLink>
         </StyledHeaderBrand>
         {headerNav}
       </StyledHeader>

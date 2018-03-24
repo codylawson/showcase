@@ -55,21 +55,21 @@ class Header extends Component {
           onRequestClose={this.closePopover}
         >
           <Menu style={{ maxWidth: '280px' }}>
-            <NavLink to="/projects/project1">
-              <MenuItem>Project 1</MenuItem>
+            <NavLink to="/projects/foo">
+              <MenuItem>Foo Project</MenuItem>
             </NavLink>
-            <NavLink to="/projects/project2">
-              <MenuItem>Project 2</MenuItem>
+            <NavLink to="/projects/bar">
+              <MenuItem>Bar Project</MenuItem>
             </NavLink>
-            <NavLink to="/projects/project3">
-              <MenuItem>Project 3</MenuItem>
+            <NavLink to="/projects/baz">
+              <MenuItem>Baz Project</MenuItem>
             </NavLink>
           </Menu>
         </Popover>
         <StyledHeaderLink target="_blank" href="mailto:delmarlawson@gmail.com">
           Contact Me
         </StyledHeaderLink>
-        <StyledHeaderLink target="_blank" href="./Cody_Lawson_Resume.pdf">
+        <StyledHeaderLink exact target="_blank" href="/Cody_Lawson_Resume.pdf">
           Resume <OpenInNewIcon size={16} />
         </StyledHeaderLink>
       </StyledHeaderNav>

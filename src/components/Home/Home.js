@@ -30,7 +30,9 @@ const Home = props => {
           </p>
         </HeroBody>
         <HeroActions>
-          <Button secondary>My Projects</Button>
+          <Button secondary href="#fooProject">
+            My Projects
+          </Button>
           <Button href="mailto:delmarlawson@gmail.com" target="_blank" inverted>
             Get In Touch
           </Button>
@@ -38,7 +40,7 @@ const Home = props => {
       </Hero>
 
       <ProjectSection
-        title="0.1 Experience And Skills"
+        title="01. Experience And Skills"
         backgroundColor={ShowcaseTheme.palette.primary3}
         clipOffset={[15, 0, 85, 100]}
         feature={<SkillChart />}
@@ -61,29 +63,33 @@ const Home = props => {
       </ProjectSection>
 
       <ProjectSection
-        title="Project 1"
+        title="02. Foo Project"
         backgroundColor={ShowcaseTheme.palette.primary}
         clipOffset={[15, 0, 100, 90]}
+        direction="rtl"
+        id="fooProject"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo
         ligula, aliquet vel lectus quis, accumsan maximus ex. Nulla maximus
         augue vitae nunc ultricies sodales.
       </ProjectSection>
       <ProjectSection
-        title="Project 2"
+        title="03. Bar Project"
         backgroundColor={ShowcaseTheme.palette.white}
         color={ShowcaseTheme.palette.black}
         clipOffset={[0, 10, 100, 95]}
-        direction="rtl"
+        id="barProject"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo
         ligula, aliquet vel lectus quis, accumsan maximus ex. Nulla maximus
         augue vitae nunc ultricies sodales.
       </ProjectSection>
       <ProjectSection
-        title="Project 3"
+        title="04. Baz Project"
         backgroundColor={ShowcaseTheme.palette.secondary2}
         clipOffset={[0, 5, 100, 85]}
+        direction="rtl"
+        id="bazProject"
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo
         ligula, aliquet vel lectus quis, accumsan maximus ex. Nulla maximus

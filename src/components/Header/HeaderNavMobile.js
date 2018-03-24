@@ -16,6 +16,12 @@ class Header extends Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.location.pathname !== nextProps.location.pathname) {
+      this.closePopover();
+    }
+  }
+
   togglePopover = () => {
     this.setState({
       open: !this.state.open
@@ -56,20 +62,20 @@ class Header extends Component {
               <MenuItem>Home</MenuItem>
             </NavLink>
             <MenuDivider />
-            <NavLink to="/projects/project1">
-              <MenuItem>Project 1</MenuItem>
+            <NavLink to="/projects/foo">
+              <MenuItem>Foo Project</MenuItem>
             </NavLink>
-            <NavLink to="/projects/project2">
-              <MenuItem>Project 2</MenuItem>
+            <NavLink to="/projects/bar">
+              <MenuItem>Bar Project</MenuItem>
             </NavLink>
-            <NavLink to="/projects/project3">
-              <MenuItem>Project 3</MenuItem>
+            <NavLink to="/projects/baz">
+              <MenuItem>Baz Project</MenuItem>
             </NavLink>
             <MenuDivider />
             <MenuItem target="_blank" href="mailto:delmarlawson@gmail.com">
               Contact Me
             </MenuItem>
-            <MenuItem target="_blank" href="./Cody_Lawson_Resume.pdf">
+            <MenuItem exact target="_blank" href="/Cody_Lawson_Resume.pdf">
               Resume <OpenInNewIcon size={16} />
             </MenuItem>
           </Menu>
