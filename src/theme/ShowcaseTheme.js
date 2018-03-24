@@ -12,7 +12,7 @@ const colors = {
   darkerBlue: '#28303D',
 
   lightRed: '#F2724F',
-  lighterRed: '#F58F63'
+  darkRed: '#e0582b'
 };
 
 const ShowcaseTheme = {
@@ -34,7 +34,7 @@ const ShowcaseTheme = {
     primary3: colors.darkerBlue,
     secondary: colors.red,
     secondary2: colors.lightRed,
-    secondary3: colors.lighterRed,
+    secondary3: colors.darkRed,
 
     success: colors.green,
     alert: colors.yellow,

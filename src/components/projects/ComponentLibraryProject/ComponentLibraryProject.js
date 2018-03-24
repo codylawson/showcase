@@ -5,11 +5,11 @@ import ProjectSection from '../../ProjectSection';
 
 import ShowcaseTheme from '../../../theme/ShowcaseTheme';
 
-const BarProject = props => {
+const ComponentLibraryProject = props => {
   return (
     <Fragment>
       <Hero
-        title="Bar Project"
+        title="Component Library"
         style={{
           background: ShowcaseTheme.palette.lightestGray,
           color: ShowcaseTheme.palette.black
@@ -77,4 +77,4 @@ const BarProject = props => {
   );
 };
 
-export default BarProject;
+export default ComponentLibraryProject;

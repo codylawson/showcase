@@ -5,11 +5,11 @@ import ProjectSection from '../../ProjectSection';
 
 import ShowcaseTheme from '../../../theme/ShowcaseTheme';
 
-const BazProject = props => {
+const FireReportingProject = props => {
   return (
     <Fragment>
       <Hero
-        title="Baz Project"
+        title="Fire Reporting"
         style={{
           background: ShowcaseTheme.palette.lightestGray,
           color: ShowcaseTheme.palette.black
@@ -77,4 +77,4 @@ const BazProject = props => {
   );
 };
 
-export default BazProject;
+export default FireReportingProject;

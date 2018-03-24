@@ -62,14 +62,14 @@ class Header extends Component {
               <MenuItem>Home</MenuItem>
             </NavLink>
             <MenuDivider />
-            <NavLink to="/projects/foo">
-              <MenuItem>Foo Project</MenuItem>
+            <NavLink to="/projects/FireReporting">
+              <MenuItem>Fire Reporting</MenuItem>
             </NavLink>
-            <NavLink to="/projects/bar">
-              <MenuItem>Bar Project</MenuItem>
+            <NavLink to="/projects/AgriculturalUnderwriting">
+              <MenuItem>Agricultural Underwriting</MenuItem>
             </NavLink>
-            <NavLink to="/projects/baz">
-              <MenuItem>Baz Project</MenuItem>
+            <NavLink to="/projects/ComponentLibrary">
+              <MenuItem>Component Library</MenuItem>
             </NavLink>
             <MenuDivider />
             <MenuItem target="_blank" href="mailto:delmarlawson@gmail.com">

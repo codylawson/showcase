@@ -28,12 +28,18 @@ const StyledButton = styled.a`
   ${props =>
     props.primary &&
     css`
-      background: ${props.theme.gradients.primary};
+      background: ${props.theme.palette.primary};
       color: ${props.theme.palette.white};
       box-shadow: 0 3px 5px 2px rgba(55, 205, 235, 0.3);
 
       &:hover {
-        background: ${props.theme.gradients.primary2};
+        background: ${props.theme.palette.primary2};
+      }
+
+      a {
+        text-decoration: none;
+        color: currentColor;
+        font-weight: 400;
       }
     `};
 
@@ -48,6 +54,11 @@ const StyledButton = styled.a`
         background: ${props.theme.gradients.secondary2};
         box-shadow: 0 3px 5px 2px rgba(255, 105, 135, 0.3);
       }
+
+      a {
+        text-decoration: none;
+        color: currentColor;
+      }
     `};
 
   ${props =>
@@ -58,6 +69,55 @@ const StyledButton = styled.a`
       &:hover {
         color: ${props.theme.palette.primary2};
         background: ${props.theme.palette.lighterGray};
+      }
+
+      a {
+        text-decoration: none;
+        color: currentColor;
+      }
+    `};
+
+  ${props =>
+    props.whitePrimary &&
+    css`
+      background: ${props.theme.palette.white};
+      color: ${props.theme.palette.primary};
+      font-weight: 400;
+      box-shadow: 0 3px 5px 2px ${props => props.theme.palette.primary2};
+      opacity: 0.9;
+      transition: opacity 175ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover {
+        opacity: 1;
+        color: ${props.theme.palette.primary};
+        box-shadow: 0 3px 7px 3px ${props => props.theme.palette.primary2};
+      }
+
+      a {
+        text-decoration: none;
+        color: currentColor;
+      }
+    `};
+
+  ${props =>
+    props.whiteSecondary &&
+    css`
+      background: ${props.theme.palette.white};
+      color: ${props.theme.palette.secondary};
+      font-weight: 400;
+      box-shadow: 0 3px 5px 2px ${props => props.theme.palette.secondary3};
+      opacity: 0.9;
+      transition: opacity 175ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover {
+        opacity: 1;
+        color: ${props.theme.palette.secondary};
+        box-shadow: 0 3px 7px 3px ${props => props.theme.palette.secondary3};
+      }
+
+      a {
+        text-decoration: none;
+        color: currentColor;
       }
     `};
 `;

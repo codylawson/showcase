@@ -5,11 +5,11 @@ import ProjectSection from '../../ProjectSection';
 
 import ShowcaseTheme from '../../../theme/ShowcaseTheme';
 
-const FooProject = props => {
+const AgriculturalUnderwritingProject = props => {
   return (
     <Fragment>
       <Hero
-        title="Foo Project"
+        title="Agricultural Underwriting"
         style={{
           background: ShowcaseTheme.palette.lightestGray,
           color: ShowcaseTheme.palette.black
@@ -77,4 +77,4 @@ const FooProject = props => {
   );
 };
 
-export default FooProject;
+export default AgriculturalUnderwritingProject;

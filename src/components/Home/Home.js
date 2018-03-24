@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 import { StyledHome } from './Home-styled';
 
@@ -30,7 +32,7 @@ const Home = props => {
           </p>
         </HeroBody>
         <HeroActions>
-          <Button secondary href="#fooProject">
+          <Button secondary href="#FireReportings_Preview">
             My Projects
           </Button>
           <Button href="mailto:delmarlawson@gmail.com" target="_blank" inverted>
@@ -63,40 +65,57 @@ const Home = props => {
       </ProjectSection>
 
       <ProjectSection
-        title="02. Foo Project"
+        title="02. Fire Reporting"
         backgroundColor={ShowcaseTheme.palette.primary}
         clipOffset={[15, 0, 100, 90]}
         direction="rtl"
-        id="fooProject"
+        id="FireReportings_Preview"
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo
-        ligula, aliquet vel lectus quis, accumsan maximus ex. Nulla maximus
-        augue vitae nunc ultricies sodales.
+        <p>
+          A Fire reporting web app used by federal and state governmental
+          agencies to track and maintain records of fire occurances. We
+          developed the capability to search and filter incidents across the
+          nation as well as edit properties and fire perimeters.
+        </p>
+        <Button whitePrimary withComponent="span">
+          <Link to="/projects/FireReporting">View Project</Link>
+        </Button>
       </ProjectSection>
       <ProjectSection
-        title="03. Bar Project"
+        title="03. Agricultural Underwriting"
         backgroundColor={ShowcaseTheme.palette.white}
         color={ShowcaseTheme.palette.black}
         clipOffset={[0, 10, 100, 95]}
-        id="barProject"
+        id="AgriculturalUnderwriting_Preview"
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo
-        ligula, aliquet vel lectus quis, accumsan maximus ex. Nulla maximus
-        augue vitae nunc ultricies sodales.
+        <p>
+          It takes a lot of information about a property to determine whether it
+          can be underwritten, we developed a web app that allowed users to view
+          satellite imagery of a property, analyze soil conditions and several
+          other layers.
+        </p>
+        <Button primary withComponent="span">
+          <Link to="/projects/AgriculturalUnderwriting">View Project</Link>
+        </Button>
       </ProjectSection>
       <ProjectSection
-        title="04. Baz Project"
+        title="04. Component Library"
         backgroundColor={ShowcaseTheme.palette.secondary2}
         clipOffset={[0, 5, 100, 85]}
         direction="rtl"
-        id="bazProject"
+        id="ComponentLibrary_Preview"
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo
-        ligula, aliquet vel lectus quis, accumsan maximus ex. Nulla maximus
-        augue vitae nunc ultricies sodales.
+        <p>
+          A solid component library is key to the success of any front-end
+          application. I developed a custom React component library following
+          Esri's brand styleguide.
+        </p>
+        <Button whiteSecondary withComponent="span">
+          <Link to="/projects/ComponentLibrary">View Project</Link>
+        </Button>
       </ProjectSection>
     </StyledHome>
   );
 };
 
-export default Home;
+export default withRouter(Home);
