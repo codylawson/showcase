@@ -77,7 +77,11 @@ const StyledProjectSectionContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 ${props => unitCalc(props.theme.spacing, 2, '*')};
+  padding: 0 ${props => unitCalc(props.theme.spacing, 6, '*')};
+
+  @media (max-width: ${props => props.theme.medium}) {
+    padding: 0 ${props => unitCalc(props.theme.spacing, 2, '*')};
+  }
 
   @media (max-width: ${props => props.theme.small}) {
     display: block;
@@ -97,6 +101,13 @@ const StyledProjectSectionFeature = styled.div`
   flex: 2 0 0px;
   padding: 0 ${props => unitCalc(props.theme.spacing, 2, '*')};
   min-height: 400px;
+  display: flex;
+  place-items: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 
   @media (max-width: ${props => props.theme.small}) {
     padding: 0;

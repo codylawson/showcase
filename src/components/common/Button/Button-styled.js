@@ -30,7 +30,7 @@ const StyledButton = styled.a`
     css`
       background: ${props.theme.palette.primary};
       color: ${props.theme.palette.white};
-      box-shadow: 0 3px 5px 2px rgba(55, 205, 235, 0.3);
+      box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.1);
 
       &:hover {
         background: ${props.theme.palette.primary2};
@@ -83,14 +83,14 @@ const StyledButton = styled.a`
       background: ${props.theme.palette.white};
       color: ${props.theme.palette.primary};
       font-weight: 400;
-      box-shadow: 0 3px 5px 2px ${props => props.theme.palette.primary2};
+      box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.1);
       opacity: 0.9;
       transition: opacity 175ms cubic-bezier(0.4, 0, 0.2, 1);
 
       &:hover {
         opacity: 1;
         color: ${props.theme.palette.primary};
-        box-shadow: 0 3px 7px 3px ${props => props.theme.palette.primary2};
+        box-shadow: 0 3px 7px 2px rgba(0, 0, 0, 0.1);
       }
 
       a {
@@ -105,14 +105,14 @@ const StyledButton = styled.a`
       background: ${props.theme.palette.white};
       color: ${props.theme.palette.secondary};
       font-weight: 400;
-      box-shadow: 0 3px 5px 2px ${props => props.theme.palette.secondary3};
+      box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.1);
       opacity: 0.9;
       transition: opacity 175ms cubic-bezier(0.4, 0, 0.2, 1);
 
       &:hover {
         opacity: 1;
         color: ${props.theme.palette.secondary};
-        box-shadow: 0 3px 7px 3px ${props => props.theme.palette.secondary3};
+        box-shadow: 0 3px 7px 2px rgba(0, 0, 0, 0.1);
       }
 
       a {

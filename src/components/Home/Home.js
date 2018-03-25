@@ -10,8 +10,11 @@ import SkillChart from '../SkillChart';
 import Button from '../common/Button';
 
 import FireReportingBg from '../images/FireReporting_Preview.png';
+import FireReportingFeature from '../images/FireReporting_Feature.png';
 import AgriculturalUnderwritingBg from '../images/AgriculturalUnderwriting_Preview.png';
+import AgriculturalUnderwritingFeature from '../images/AgriculturalUnderwriting_Feature.png';
 import ComponentLibraryBg from '../images/ComponentLibrary_Preview.png';
+import ComponentLibraryFeature from '../images/ComponentLibrary_Feature.png';
 
 import ShowcaseTheme from '../../theme/ShowcaseTheme';
 
@@ -71,10 +74,10 @@ const Home = props => {
       <ProjectSection
         title="02. Fire Reporting"
         backgroundColor={ShowcaseTheme.palette.primary}
-        backgroundImage={FireReportingBg}
         clipOffset={[15, 0, 100, 90]}
         direction="rtl"
         id="FireReportings_Preview"
+        feature={<img src={FireReportingFeature} alt="Fire Reporting App" />}
       >
         <p>
           A Fire reporting web app used by federal and state governmental
@@ -89,10 +92,15 @@ const Home = props => {
       <ProjectSection
         title="03. Agricultural Underwriting"
         backgroundColor={ShowcaseTheme.palette.white}
-        backgroundImage={AgriculturalUnderwritingBg}
         color={ShowcaseTheme.palette.black}
         clipOffset={[0, 10, 100, 95]}
         id="AgriculturalUnderwriting_Preview"
+        feature={
+          <img
+            src={AgriculturalUnderwritingFeature}
+            alt="Agricultural Underwriting App"
+          />
+        }
       >
         <p>
           It takes a lot of information about a property to determine whether it
@@ -107,10 +115,12 @@ const Home = props => {
       <ProjectSection
         title="04. Component Library"
         backgroundColor={ShowcaseTheme.palette.secondary2}
-        backgroundImage={ComponentLibraryBg}
         clipOffset={[0, 5, 100, 85]}
         direction="rtl"
         id="ComponentLibrary_Preview"
+        feature={
+          <img src={ComponentLibraryFeature} alt="Component Library App" />
+        }
       >
         <p>
           A solid component library is key to the success of any front-end
