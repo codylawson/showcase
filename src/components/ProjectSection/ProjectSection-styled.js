@@ -2,12 +2,23 @@ import styled, { css } from 'styled-components';
 import { transparentize } from 'polished';
 import { unitCalc } from '../../theme/utils';
 
+const mobileClipPath = clipOffset => {
+  return `
+    clip-path: polygon(
+      0% ${clipOffset[0] * 0.3}%,
+      100% ${clipOffset[1] * 0.3}%,
+      100% ${100 - (100 - clipOffset[2]) * 0.3}%,
+      0% ${100 - (100 - clipOffset[3]) * 0.3}%
+    );
+  `;
+};
+
 const StyledProjectSection = styled.section`
   display: flex;
-  padding: ${props => unitCalc(props.theme.spacing, 10, '*')}
+  padding: ${props => unitCalc(props.theme.spacing, 6, '*')}
     ${props => unitCalc(props.theme.spacing, 2, '*')}
-    ${props => unitCalc(props.theme.spacing, 18, '*')};
-  margin-top: -14rem;
+    ${props => unitCalc(props.theme.spacing, 14, '*')};
+  margin-top: -10rem;
 
   background: ${props => props.backgroundColor};
 
@@ -50,6 +61,8 @@ const StyledProjectSection = styled.section`
     flex-direction: column-reverse;
     flex-wrap: wrap;
     text-align: justify;
+
+    ${props => mobileClipPath(props.clipOffset)};
 
     ${props =>
       props.direction === 'rtl' &&
