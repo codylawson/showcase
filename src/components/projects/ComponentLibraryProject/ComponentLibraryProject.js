@@ -3,9 +3,15 @@ import React, { Fragment } from 'react';
 import Hero, { HeroBody } from '../../Hero';
 import ProjectSection from '../../ProjectSection';
 import RoleSection from '../../RoleSection';
+import TechnologySection from '../../TechnologySection';
+
+import { StyledRoleSectionContainer } from '../../RoleSection/RoleSection-styled';
+import { StyledTechnologySectionContainer } from '../../TechnologySection/TechnologySection-styled';
 
 import CodeRoleGraphic from '../../images/CodeRole.svg';
 import DesignRoleGraphic from '../../images/DesignRole.svg';
+import ReactLogo from '../../images/ReactLogo.svg';
+import GenericTechLogo from '../../images/GenericTechLogo.svg';
 
 import ShowcaseTheme from '../../../theme/ShowcaseTheme';
 
@@ -33,14 +39,14 @@ const ComponentLibraryProject = props => {
         backgroundColor={ShowcaseTheme.palette.primary}
         clipOffset={[15, 0, 100, 90]}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+        <StyledRoleSectionContainer>
           <RoleSection title="UI Design" graphic={DesignRoleGraphic}>
             I did some ui design and stuff
           </RoleSection>
           <RoleSection title="Front-End Development" graphic={CodeRoleGraphic}>
             I did some dev stuff
           </RoleSection>
-        </div>
+        </StyledRoleSectionContainer>
       </ProjectSection>
 
       <ProjectSection
@@ -63,10 +69,17 @@ const ComponentLibraryProject = props => {
         clipOffset={[0, 10, 85, 100]}
         direction="rtl"
       >
-        Brief rundown of the various frameworks we used. Lorem ipsum dolor sit
-        amet, consectetur adipiscing elit. Phasellus justo ligula, aliquet vel
-        lectus quis, accumsan maximus ex. Nulla maximus augue vitae nunc
-        ultricies sodales.
+        <StyledTechnologySectionContainer>
+          <TechnologySection title="React & Redux" graphic={ReactLogo}>
+            We used react
+          </TechnologySection>
+          <TechnologySection
+            title="Styled Components"
+            graphic={GenericTechLogo}
+          >
+            We used styled components
+          </TechnologySection>
+        </StyledTechnologySectionContainer>
       </ProjectSection>
 
       <ProjectSection

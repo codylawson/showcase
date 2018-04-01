@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+const StyledRoleSectionContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
 const StyledRoleSection = styled.div`
   text-align: center;
   margin: ${props => props.theme.spacing};
@@ -18,9 +23,11 @@ const StyledRoleTitle = styled.h5`
 
 const StyledRoleDescription = styled.p`
   font-weight: 300;
+  opacity: 0.7;
 `;
 
 export {
+  StyledRoleSectionContainer,
   StyledRoleSection,
   StyledRoleGraphic,
   StyledRoleTitle,
