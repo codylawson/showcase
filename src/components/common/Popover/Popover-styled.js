@@ -47,6 +47,7 @@ const StyledPopoverMenuItem = styled.div`
   color: ${props => props.theme.palette.primary3};
   display: flex;
   align-items: center;
+  width: 100%;
 
   &:hover {
     background: ${props => props.theme.palette.lighterGray};

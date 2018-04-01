@@ -9,11 +9,8 @@ import ProjectSection from '../ProjectSection';
 import SkillChart from '../SkillChart';
 import Button from '../common/Button';
 
-import FireReportingBg from '../images/FireReporting_Preview.png';
 import FireReportingFeature from '../images/FireReporting_Feature.png';
-import AgriculturalUnderwritingBg from '../images/AgriculturalUnderwriting_Preview.png';
 import AgriculturalUnderwritingFeature from '../images/AgriculturalUnderwriting_Feature.png';
-import ComponentLibraryBg from '../images/ComponentLibrary_Preview.png';
 import ComponentLibraryFeature from '../images/ComponentLibrary_Feature.png';
 
 import ShowcaseTheme from '../../theme/ShowcaseTheme';

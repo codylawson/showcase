@@ -1,17 +1,6 @@
 import styled, { css } from 'styled-components';
 import { transparentize } from 'polished';
-import { unitCalc } from '../../theme/utils';
-
-const mobileClipPath = clipOffset => {
-  return `
-    clip-path: polygon(
-      0% ${clipOffset[0] * 0.3}%,
-      100% ${clipOffset[1] * 0.3}%,
-      100% ${100 - (100 - clipOffset[2]) * 0.3}%,
-      0% ${100 - (100 - clipOffset[3]) * 0.3}%
-    );
-  `;
-};
+import { unitCalc, clipPath, mobileClipPath } from '../../theme/utils';
 
 const StyledProjectSection = styled.section`
   display: flex;
@@ -39,12 +28,7 @@ const StyledProjectSection = styled.section`
       background-size: auto, contain, auto;
     `};
 
-  clip-path: polygon(
-    0% ${props => props.clipOffset[0]}%,
-    100% ${props => props.clipOffset[1]}%,
-    100% ${props => props.clipOffset[2]}%,
-    0% ${props => props.clipOffset[3]}%
-  );
+  ${props => clipPath(props.clipOffset)};
   width: 100%;
   box-sizing: border-box;
   color: ${props => props.color};

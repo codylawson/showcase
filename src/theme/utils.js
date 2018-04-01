@@ -19,4 +19,26 @@ const unitCalc = (operand1, operand2, operator) => {
   return value;
 };
 
-export { unitCalc };
+const clipPath = clipOffset => {
+  return `
+  clip-path: polygon(
+    0% ${clipOffset[0]}%,
+    100% ${clipOffset[1]}%,
+    100% ${clipOffset[2]}%,
+    0% ${clipOffset[3]}%
+  );
+  `;
+};
+
+const mobileClipPath = clipOffset => {
+  return `
+    clip-path: polygon(
+      0% ${clipOffset[0] * 0.3}%,
+      100% ${clipOffset[1] * 0.3}%,
+      100% ${100 - (100 - clipOffset[2]) * 0.3}%,
+      0% ${100 - (100 - clipOffset[3]) * 0.3}%
+    );
+  `;
+};
+
+export { unitCalc, clipPath, mobileClipPath };

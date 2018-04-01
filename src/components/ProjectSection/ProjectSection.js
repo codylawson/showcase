@@ -20,6 +20,12 @@ const ProjectSection = ({
   id,
   ...other
 }) => {
+  let featureSection;
+  if (feature) {
+    featureSection = (
+      <StyledProjectSectionFeature>{feature}</StyledProjectSectionFeature>
+    );
+  }
   return (
     <StyledProjectSection
       clipOffset={clipOffset}
@@ -33,7 +39,7 @@ const ProjectSection = ({
         <StyledProjectSectionTitle>{title}</StyledProjectSectionTitle>
         <StyledProjectSectionBody>{children}</StyledProjectSectionBody>
       </StyledProjectSectionContent>
-      <StyledProjectSectionFeature>{feature}</StyledProjectSectionFeature>
+      {featureSection}
     </StyledProjectSection>
   );
 };

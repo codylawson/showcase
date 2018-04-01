@@ -2,6 +2,11 @@ import React, { Fragment } from 'react';
 
 import Hero, { HeroBody } from '../../Hero';
 import ProjectSection from '../../ProjectSection';
+import RoleSection from '../../RoleSection';
+
+import CodeRoleGraphic from '../../images/CodeRole.svg';
+import DesignRoleGraphic from '../../images/DesignRole.svg';
+import UXRoleGraphic from '../../images/UXRole.svg';
 
 import ShowcaseTheme from '../../../theme/ShowcaseTheme';
 
@@ -26,14 +31,20 @@ const AgriculturalUnderwritingProject = props => {
 
       <ProjectSection
         title="Role & Responsibilities"
-        backgroundColor={ShowcaseTheme.palette.secondary}
+        backgroundColor={ShowcaseTheme.palette.primary3}
         clipOffset={[15, 0, 100, 90]}
-        direction="rtl"
       >
-        Little cards for my various responsibilities on this project, ie. UX,
-        Design, Development... Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Phasellus justo ligula, aliquet vel lectus quis,
-        accumsan maximus ex. Nulla maximus augue vitae nunc ultricies sodales.
+        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+          <RoleSection title="UI Design" graphic={DesignRoleGraphic}>
+            I did some ui design and stuff
+          </RoleSection>
+          <RoleSection title="User Experience" graphic={UXRoleGraphic}>
+            I did some UX stuff
+          </RoleSection>
+          <RoleSection title="Front-End Development" graphic={CodeRoleGraphic}>
+            I did some dev stuff
+          </RoleSection>
+        </div>
       </ProjectSection>
 
       <ProjectSection
