@@ -4,9 +4,16 @@ import Hero, { HeroBody } from '../../Hero';
 import ProjectSection from '../../ProjectSection';
 import RoleSection from '../../RoleSection';
 import TechnologySection from '../../TechnologySection';
+import LessonSection from '../../LessonSection';
 
+import { StyledProjectSectionTitle } from '../../ProjectSection/ProjectSection-styled';
 import { StyledRoleSectionContainer } from '../../RoleSection/RoleSection-styled';
 import { StyledTechnologySectionContainer } from '../../TechnologySection/TechnologySection-styled';
+import {
+  StyledLessonSectionContainer,
+  StyledLessonTitle,
+  StyledLessonDescription
+} from '../../LessonSection/LessonSection-styled';
 
 import CodeRoleGraphic from '../../images/CodeRole.svg';
 import DesignRoleGraphic from '../../images/DesignRole.svg';
@@ -68,7 +75,7 @@ const FireReportingProject = props => {
       <ProjectSection
         title="Technology"
         backgroundColor={ShowcaseTheme.palette.primary}
-        clipOffset={[0, 10, 85, 100]}
+        clipOffset={[5, 0, 100, 95]}
         direction="rtl"
       >
         <StyledTechnologySectionContainer>
@@ -88,15 +95,40 @@ const FireReportingProject = props => {
       </ProjectSection>
 
       <ProjectSection
-        title="Lessons Learned"
-        backgroundColor={ShowcaseTheme.palette.primary3}
-        clipOffset={[5, 0, 100, 90]}
+        backgroundColor={ShowcaseTheme.palette.white}
+        clipOffset={[3, 0, 100, 90]}
         direction="rtl"
       >
-        2-3 bullet points of things we learned while going through this process.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo
-        ligula, aliquet vel lectus quis, accumsan maximus ex. Nulla maximus
-        augue vitae nunc ultricies sodales.
+        <StyledLessonSectionContainer>
+          <LessonSection
+            backgroundColor={ShowcaseTheme.palette.white}
+            color={ShowcaseTheme.palette.black}
+          >
+            <StyledProjectSectionTitle>
+              Lessons Learned
+            </StyledProjectSectionTitle>
+            <StyledLessonTitle>Lesson 1</StyledLessonTitle>
+            <StyledLessonDescription>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              justo ligula, aliquet vel lectus quis, accumsan maximus ex. Nulla
+              maximus augue vitae nunc ultricies sodales.
+            </StyledLessonDescription>
+          </LessonSection>
+          <LessonSection
+            backgroundColor={ShowcaseTheme.palette.lighterGray}
+            color={ShowcaseTheme.palette.black}
+          >
+            <StyledProjectSectionTitle>
+              <br />
+            </StyledProjectSectionTitle>
+            <StyledLessonTitle>Lesson 2</StyledLessonTitle>
+            <StyledLessonDescription>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              justo ligula, aliquet vel lectus quis, accumsan maximus ex. Nulla
+              maximus augue vitae nunc ultricies sodales.
+            </StyledLessonDescription>
+          </LessonSection>
+        </StyledLessonSectionContainer>
       </ProjectSection>
     </Fragment>
   );

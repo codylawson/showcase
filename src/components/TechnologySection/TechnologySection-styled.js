@@ -3,6 +3,10 @@ import styled from 'styled-components';
 const StyledTechnologySectionContainer = styled.div`
   display: flex;
   justify-content: space-around;
+
+  @media (max-width: ${props => props.theme.small}) {
+    flex-wrap: wrap;
+  }
 `;
 
 const StyledTechnologySection = styled.div`
